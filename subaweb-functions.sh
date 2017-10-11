@@ -41,7 +41,7 @@ subaweb_populate_db() {
 
     subaweb_mysql_up || return 1
 
-    sqlsourcefile=${1:-backup-jlabo-23092016.sql}
+    sqlsourcefile=${1:-backup-jlabo-latest.sql}
 
     docker run -i --rm -v vc_subaweb_db:/var/lib/mysql \
         --net dockersubaweb_default \
@@ -60,7 +60,7 @@ EOF
 
 subaweb_bootstrap() {
 
-    subaweb_delete_db_volume || return 1
+    subaweb_delete_db_volume
     subaweb_create_db_volume || return 1
     subaweb_populate_db || return 1
 
