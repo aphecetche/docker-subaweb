@@ -6,7 +6,7 @@ services:
     links:
       - joomladb:mysql
     volumes:
-      - $HOME/Mind/@Archive/2017/joomla-dev/importlabo/www:/var/www/html/
+      - $HOME/Mind/@Archive/2018/joomla-dev/importlabo/www:/var/www/html/
     ports:
       - 8080:80
     environment:
