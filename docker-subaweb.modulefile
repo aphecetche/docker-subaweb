@@ -1,0 +1,15 @@
+#%Modules1.0
+proc ModulesHelp { } {
+    puts stderr "Setup environment for DOCKER_SUBAWEB_PROJECTNAME in docker"
+}
+
+module-whatis "environment for using DOCKER_SUBAWEB_PROJECTNAME in docker"
+
+module load docker
+
+setenv DOCKER_SUBAWEB_PROJECTNAME subaweb
+
+setenv DOCKER_SUBAWEB_SRC $::env(HOME)/github.com/aphecetche/docker-$::env(DOCKER_SUBAWEB_PROJECTNAME)
+
+append-path PATH $::env(DOCKER_SUBAWEB_SRC)
+

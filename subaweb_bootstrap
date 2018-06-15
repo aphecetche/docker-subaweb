@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+subaweb_delete_db_volume
+subaweb_create_db_volume || exit 1
+subaweb_populate_db || exit 1

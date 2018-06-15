@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+subaweb_mysql_up || exit 1
+
+sqlsourcefile=${1:-backup-jlabo-latest.sql}
+
+docker run -i --rm -v vc_${DOCKER_SUBAWEB_PROJECTNAME}_db:/var/lib/mysql \
+	--net ${DOCKER_SUBAWEB_PROJECTNAME}_default \
+	-v ${DOCKER_SUBAWEB_SRC}:/sqlsource \
+	mysql:5.6 \
+	mysql -uroot -hjoomladb -pjuges3:sud <<EOF
+    create database if not exists jlabo;
+    connect jlabo;
+    source /sqlsource/$sqlsourcefile
+EOF
+
+docker-compose -p $DOCKER_SUBAWEB_PROJECTNAME -f $DOCKER_SUBAWEB_SRC/docker-compose.yml down
+
+exit 0

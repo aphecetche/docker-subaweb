@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+docker volume create --name vc_${DOCKER_SUBAWEB_PROJECTNAME}_db
+
