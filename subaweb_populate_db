@@ -2,7 +2,7 @@
 
 subaweb_mysql_up || exit 1
 
-sqlsourcefile=${1:-backup-jlabo-latest.sql}
+sqlsourcefile=backup-jlabo-latest.sql
 
 docker run -i --rm -v vc_${DOCKER_SUBAWEB_PROJECTNAME}_db:/var/lib/mysql \
 	--net ${DOCKER_SUBAWEB_PROJECTNAME}_default \
