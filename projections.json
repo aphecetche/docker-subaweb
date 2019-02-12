@@ -1,0 +1,26 @@
+{
+  "components/com_subatech/controllers/*.php": {
+    "type": "control"
+  },
+  "components/com_subatech/layouts/*.php": {
+    "type": "layout"
+  },
+  "components/com_subatech/models/*.php": {
+    "type": "model"
+  },
+  "components/com_subatech/models/forms/*.xml": {
+    "type": "form"
+  },
+  "components/com_subatech/views/*/view.html.php": {
+    "type": "view"
+  },
+  "components/com_subatech/views/*/tmpl/default.php": {
+    "type": "tmpl"
+  },
+  "components/com_subatech/views/*form/tmpl/edit.php": {
+    "type": "edit"
+  },
+  "components/com_subatech/helpers/*.php": {
+    "type": "helper"
+  }
+}
