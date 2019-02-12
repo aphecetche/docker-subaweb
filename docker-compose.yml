@@ -7,6 +7,8 @@ services:
       - joomladb:mysql
     volumes:
       - $DOCKER_SUBAWEB_SRC/www:/var/www/html/
+      - $DOCKER_SUBAWEB_SRC/logs:/home/www/logs
+      - $DOCKER_SUBAWEB_SRC/tmp:/home/www/tmp
     ports:
       - 8080:80
     environment:
