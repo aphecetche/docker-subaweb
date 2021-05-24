@@ -14,6 +14,6 @@ docker run -i --rm -v vc_${DOCKER_SUBAWEB_PROJECTNAME}_db:/var/lib/mysql \
     source /sqlsource/$sqlsourcefile
 EOF
 
-docker-compose -p $DOCKER_SUBAWEB_PROJECTNAME -f $DOCKER_SUBAWEB_SRC/docker-compose.yml down
+docker compose -p $DOCKER_SUBAWEB_PROJECTNAME -f $DOCKER_SUBAWEB_SRC/docker-compose.yml down
 
 exit 0

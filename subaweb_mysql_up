@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-docker-compose -p $DOCKER_SUBAWEB_PROJECTNAME -f $DOCKER_SUBAWEB_SRC/docker-compose.yml up -d joomladb || exit 1
+docker compose -p $DOCKER_SUBAWEB_PROJECTNAME -f $DOCKER_SUBAWEB_SRC/docker-compose.yml up -d joomladb || exit 1
 
 n="0"
 
