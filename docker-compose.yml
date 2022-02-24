@@ -19,7 +19,7 @@ services:
       JOOMLA_DB_NAME: jlabo
 
   joomladb:
-    image: mysql:5.6
+    image: mariadb:10.2
     volumes:
       - vc_subaweb_db:/var/lib/mysql
     ports:
@@ -29,7 +29,7 @@ services:
       MYSQL_DATABASE: jlabo
 
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin:4.6.3-1
+    image: arm64v8/phpmyadmin:5.1.1
     links:
       - joomladb
     ports:
